@@ -29,6 +29,7 @@
     color:var(--ink);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
   h1,h2,h3, .display{
     font-family:'Baloo 2', sans-serif;
@@ -80,9 +81,21 @@
 
   /* ---------- hero ---------- */
   .hero{
-    padding:64px 0 36px;
+    position:relative;
+    padding:72px 0 44px;
     display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center;
+    overflow:visible;
   }
+  .hero::before{
+    content:""; position:absolute; top:-20px; left:-40px; width:220px; height:220px;
+    background-image:radial-gradient(var(--terracotta) 1.6px, transparent 1.6px);
+    background-size:16px 16px; opacity:.18; z-index:0; pointer-events:none;
+  }
+  .brand-tag{
+    display:inline-flex; align-items:center; gap:8px; margin-bottom:14px;
+  }
+  .brand-tag img{ width:26px; height:26px; border-radius:50%; object-fit:cover; box-shadow:0 4px 10px -4px rgba(138,74,34,.5); }
+  .brand-tag span{ font-weight:800; font-size:.82rem; letter-spacing:.06em; color:var(--terracotta-deep); text-transform:uppercase; }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
     font-weight:700; letter-spacing:.1em; font-size:.76rem;
@@ -102,8 +115,8 @@
   .btn-outline{ border:2px solid var(--terracotta); color:var(--terracotta-deep); background:transparent; }
   .btn-outline:hover{ background:var(--icing); }
 
-  .hero-art{ position:relative; display:flex; justify-content:center; align-items:center; }
-  .hero-art img{
+  .hero-art{ position:relative; display:flex; justify-content:center; align-items:center; z-index:1; }
+  .hero-art img.hero-photo{
     width:100%; max-width:380px; aspect-ratio:1/1; object-fit:cover; border-radius:50%;
     box-shadow:0 24px 50px -18px rgba(138,74,34,.45); border:8px solid #fff;
   }
@@ -112,6 +125,18 @@
     background:radial-gradient(circle at 35% 30%, var(--icing), transparent 70%);
     z-index:0;
   }
+  .ring-deco{
+    position:absolute; width:440px; height:440px; border:2px dashed var(--terracotta);
+    border-radius:50%; opacity:.25; z-index:0; animation:spin 40s linear infinite;
+  }
+  @keyframes spin{ from{ transform:rotate(0deg);} to{ transform:rotate(360deg);} }
+  .logo-seal{
+    position:absolute; left:-8px; bottom:6px; z-index:2;
+    width:112px; height:112px; border-radius:50%; background:#fff;
+    display:flex; align-items:center; justify-content:center; padding:6px;
+    box-shadow:0 14px 30px -10px rgba(74,46,26,.5); border:3px solid var(--icing);
+  }
+  .logo-seal img{ width:100%; height:100%; border-radius:50%; object-fit:cover; }
 
   /* ---------- trust badges ---------- */
   .badges{ padding:0 0 70px; }
@@ -266,6 +291,8 @@
     .navlinks{ display:none; }
     .burger{ display:flex; }
     .mobile-menu.open{ display:flex; }
+    .hero::before{ display:none; }
+    .ring-deco{ width:340px; height:340px; }
     .hero{ grid-template-columns:1fr; }
     .hero-art{ order:-1; }
     .badge-row{ grid-template-columns:repeat(2,1fr); }
@@ -319,6 +346,10 @@
   <!-- HERO -->
   <section class="hero wrap">
     <div>
+      <div class="brand-tag">
+        <img src="images/logo.jpg" alt="Cat Cakery">
+        <span>Cat Cakery</span>
+      </div>
       <span class="eyebrow">Have a Taste Cakes with Cat</span>
       <h1>Bánh ít ngọt, <span>nhiều thương</span>, trọn vị yêu.</h1>
       <p class="lead">Cat Cakery cho ra lò từng mẻ bánh nhỏ đầy yêu thương và bùi vị, với lượng đường thật ít, để bạn mãi hoài không ngán.</p>
@@ -328,8 +359,10 @@
       </div>
     </div>
     <div class="hero-art">
+      <div class="ring-deco"></div>
       <div class="blob"></div>
-      <img src="images/banh-cover.jpg" alt="Bánh của Cat Cakery">
+      <img class="hero-photo" src="images/banh-cover.jpg" alt="Bánh của Cat Cakery">
+      <div class="logo-seal"><img src="images/logo.jpg" alt="Cat Cakery"></div>
     </div>
   </section>
 
