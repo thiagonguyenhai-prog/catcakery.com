@@ -12,7 +12,9 @@ Cấu trúc thư mục:
     ├── banh-trungmuoi.jpg
     ├── banh-custom.jpg
     ├── banh-caneles.jpg
-    └── banh-trungthu.jpg
+    ├── banh-trungthu.jpg
+    ├── banh-cover.jpg
+    └── banh-hopqua.jpg
 ```
 
 Đây là site tĩnh (không cần build, không cần Node/npm) nên deploy lên Vercel rất nhanh. Chọn 1 trong 2 cách dưới đây.
@@ -57,6 +59,7 @@ Nếu sau này mua domain riêng (vd. catcakery.vn):
 
 ## Việc cần bạn làm thêm sau này
 
-- Giá của "Bánh chuối choco", "Bánh bông lan trứng muối", "Bánh kem theo yêu cầu", "Bánh trung thu" đang để "Liên hệ giá" vì ảnh gốc không có giá — gửi mình giá thật để điền vào `index.html` (tìm đúng dòng `<div class="price">...`).
-- Ảnh "Bánh kem theo yêu cầu" mình dùng tạm ảnh bánh trang trí con ong (file gốc không có tên rõ ràng) — nếu đây không đúng sản phẩm bạn muốn, cứ gửi ảnh khác để mình thay.
+- Giá của "Bánh chuối choco", "Bánh bông lan trứng muối", "Bánh kem theo yêu cầu", "Bánh trung thu", "Hộp quà bánh, kẹo" đang để "Liên hệ giá" — gửi mình giá thật để điền vào `index.html` (tìm đúng dòng `<div class="price">...`).
+- Phần Testimonials mình viết lại bằng lời văn ngắn gọn theo đúng tinh thần các đoạn chat bạn gửi, không dùng lại ảnh chụp màn hình gốc (vì ảnh đó có thông tin chuyển khoản/tên khách hàng thật, không nên đưa công khai). Nếu bạn có lời khen nào muốn thay/thêm, cứ gửi nguyên văn, mình cập nhật vào đúng khối `.quote-card`.
 - Địa chỉ cụ thể của tiệm vẫn chưa có trong web (Facebook chặn crawl tự động) — gửi mình địa chỉ để thêm vào phần Liên hệ.
+- Link Instagram hiện đang trỏ theo suy đoán `instagram.com/_cat.cakery` — gửi mình link chính xác nếu khác.

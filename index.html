@@ -85,7 +85,7 @@
   }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
-    font-weight:700; letter-spacing:.14em; font-size:.76rem;
+    font-weight:700; letter-spacing:.1em; font-size:.76rem;
     color:var(--terracotta-dark); text-transform:uppercase;
     background:var(--icing); padding:7px 14px; border-radius:999px; margin-bottom:18px;
   }
@@ -188,49 +188,64 @@
   .promise li{ display:flex; gap:10px; font-weight:600; font-size:.94rem; align-items:flex-start; }
   .promise li svg{ flex:0 0 auto; width:20px; height:20px; margin-top:2px; }
 
+  /* ---------- testimonials ---------- */
+  .testimonials{ background:var(--icing); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .stars{ display:flex; gap:4px; justify-content:center; margin-bottom:10px; }
+  .stars svg{ width:18px; height:18px; }
+  .quote-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; margin-top:8px;
+  }
+  .quote-card{
+    background:var(--cream-2); border:1px solid var(--line); border-radius:18px; padding:22px 20px;
+    display:flex; flex-direction:column; gap:14px; position:relative;
+  }
+  .quote-card .mark{ font-family:'Baloo 2'; font-size:2rem; color:var(--terracotta); line-height:1; }
+  .quote-card p{ font-size:.92rem; color:var(--ink); font-weight:500; flex:1; }
+  .quote-card .who{ display:flex; align-items:center; gap:8px; font-size:.82rem; font-weight:700; color:var(--terracotta-deep); }
+  .quote-card .who .dot{ width:8px; height:8px; border-radius:50%; background:var(--terracotta); }
+  .testi-thanks{ text-align:center; margin-top:38px; font-family:'Baloo 2'; font-weight:600; color:var(--terracotta-deep); font-size:1.05rem; }
+
   /* ---------- contact ---------- */
   .contact{ background:var(--cream-2); border-top:1px solid var(--line); }
-  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
-  .contact-info h2{ font-size:2rem; margin-bottom:14px; }
-  .contact-info > p{ color:var(--ink-soft); margin-bottom:26px; max-width:420px; }
-  .info-row{ display:flex; gap:14px; align-items:flex-start; margin-bottom:18px; }
+  .contact-inner{ max-width:640px; margin:0 auto; text-align:center; }
+  .contact-inner h2{ font-size:2rem; margin-bottom:14px; }
+  .contact-inner > p{ color:var(--ink-soft); margin-bottom:34px; }
+  .info-row{ display:flex; gap:14px; align-items:center; margin-bottom:18px; text-align:left; max-width:340px; margin-left:auto; margin-right:auto; }
   .info-row .ic{ width:38px; height:38px; border-radius:50%; background:var(--icing); display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
   .info-row .ic svg{ width:20px; height:20px; }
   .info-row .label{ font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); font-weight:700; }
   .info-row .value{ font-weight:700; font-size:1.02rem; color:var(--terracotta-deep); }
-  .social-row{ display:flex; gap:12px; margin-top:22px; }
+  .social-row{ display:flex; gap:12px; margin-top:8px; justify-content:center; }
   .social-row a{
-    width:44px; height:44px; border-radius:50%; background:var(--terracotta); color:#fff;
+    width:46px; height:46px; border-radius:50%; background:var(--terracotta); color:#fff;
     display:flex; align-items:center; justify-content:center; transition:background .2s ease, transform .2s ease;
   }
   .social-row a:hover{ background:var(--terracotta-dark); transform:translateY(-2px); }
   .social-row svg{ width:20px; height:20px; }
 
-  .contact-form{
-    background:var(--cream); border:1px solid var(--line); border-radius:22px; padding:30px;
-  }
-  .contact-form h3{ font-size:1.1rem; margin-bottom:6px; }
-  .contact-form .note{ font-size:.85rem; color:var(--ink-soft); margin-bottom:20px; }
-  .field{ margin-bottom:16px; }
-  .field label{ display:block; font-size:.85rem; font-weight:700; margin-bottom:6px; color:var(--ink); }
-  .field input, .field select, .field textarea{
-    width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--line);
-    background:#fff; font-family:inherit; font-size:.92rem; color:var(--ink);
-  }
-  .field textarea{ resize:vertical; min-height:88px; }
-  .field input:focus, .field select:focus, .field textarea:focus{ outline:2px solid var(--terracotta); outline-offset:1px; }
-  .form-submit{ width:100%; }
-
   /* ---------- footer ---------- */
-  footer{ padding:56px 0 100px; text-align:center; }
+  footer{ padding:56px 0 120px; text-align:center; }
   footer .logo-final{ width:120px; height:120px; margin:0 auto 18px; border-radius:50%; overflow:hidden; box-shadow:var(--shadow); }
   footer .logo-final img{ width:100%; height:100%; object-fit:cover; }
   footer .tag{ font-family:'Baloo 2'; font-weight:700; color:var(--terracotta-deep); margin-bottom:6px; }
   footer .copy{ font-size:.82rem; color:var(--ink-soft); }
 
-  /* ---------- floating order button ---------- */
-  .float-order{
+  /* ---------- floating buttons ---------- */
+  .float-stack{
     position:fixed; right:22px; bottom:22px; z-index:60;
+    display:flex; flex-direction:column; align-items:flex-end; gap:12px;
+  }
+  .float-icon{
+    width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    color:#fff; box-shadow:0 12px 22px -8px rgba(74,46,26,.4);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .float-icon svg{ width:24px; height:24px; }
+  .float-icon:hover{ transform:translateY(-2px) scale(1.05); }
+  .float-icon.fb{ background:#1877F2; }
+  .float-icon.ig{ background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+  .float-icon.zalo{ background:#0068FF; }
+  .float-order{
     background:var(--terracotta); color:#fff; border-radius:999px;
     padding:14px 20px; font-weight:700; font-size:.9rem;
     display:flex; align-items:center; gap:8px; box-shadow:0 14px 28px -10px rgba(138,74,34,.55);
@@ -248,18 +263,20 @@
     .hero-art{ order:-1; }
     .badge-row{ grid-template-columns:repeat(2,1fr); }
     .product-grid{ grid-template-columns:repeat(2,1fr); }
+    .quote-grid{ grid-template-columns:repeat(2,1fr); }
     .promise{ grid-template-columns:1fr; text-align:center; }
     .promise ul{ align-items:center; }
     .promise li{ text-align:left; }
-    .contact-grid{ grid-template-columns:1fr; }
   }
   @media (max-width: 560px){
     section{ padding:56px 0; }
     .hero h1{ font-size:2.1rem; }
     .badge-row{ grid-template-columns:1fr 1fr; }
     .product-grid{ grid-template-columns:1fr; }
+    .quote-grid{ grid-template-columns:1fr; }
     .float-order span{ display:none; }
     .float-order{ padding:14px; }
+    .float-icon{ width:44px; height:44px; }
   }
 </style>
 </head>
@@ -295,17 +312,17 @@
   <!-- HERO -->
   <section class="hero wrap">
     <div>
-      <span class="eyebrow">Bánh nhà làm · số lượng nhỏ mỗi ngày</span>
-      <h1>Bánh ít ngọt, <span>nhiều thương</span>, gói trọn từ tim.</h1>
-      <p class="lead">Cat Cakery làm từng mẻ bánh nhỏ mỗi ngày bằng tay, giảm đường để bạn ăn hoài không ngán mà vẫn đủ béo, đủ thơm.</p>
+      <span class="eyebrow">Have a Taste Cakes with Cat</span>
+      <h1>Bánh ít ngọt, <span>nhiều thương</span>, trọn vị yêu.</h1>
+      <p class="lead">Cat Cakery cho ra lò từng mẻ bánh nhỏ đầy yêu thương và bùi vị, với lượng đường thật ít, để bạn mãi hoài không ngán.</p>
       <div class="hero-btns">
         <a href="#san-pham" class="btn btn-primary">Xem menu bánh</a>
-        <a href="#lien-he" class="btn btn-outline">Nhắn tin đặt bánh</a>
+        <a href="https://www.facebook.com/share/1DMzbwJ5s9/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-outline">Nhắn tin đặt bánh</a>
       </div>
     </div>
     <div class="hero-art">
       <div class="blob"></div>
-      <img src="images/banh-trungmuoi.jpg" alt="Bánh của Cat Cakery">
+      <img src="images/banh-cover.jpg" alt="Bánh của Cat Cakery">
     </div>
   </section>
 
@@ -331,7 +348,7 @@
     </div>
   </section>
 
-  <svg class="drip-divider" viewBox="0 0 1200 46" preserveAspectRatio="none"><path d="M0 0h1200v18c-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0v10H0z"/></svg>
+  <svg class="drip-divider" viewBox="0 0 1200 46" preserveAspectRatio="none"><path d="M0 0h1200v18c-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0-30-18-60-18-90 0-30 18-60 18-90 0-30-18-60-18-90 0v10H0z"/></svg>
 
   <!-- PRODUCTS -->
   <section class="products" id="san-pham">
@@ -339,7 +356,7 @@
       <div class="section-head">
         <span class="eyebrow">Menu</span>
         <h2>Bánh của Cat Cakery</h2>
-        <p>Sáu vị bánh chủ lực, mỗi mẻ đều được làm thủ công và giảm ngọt để hợp khẩu vị người trẻ.</p>
+        <p>Mỗi mẻ bánh được làm bằng sự yêu thương và đầy tâm huyết — "From Heart to Cakes".</p>
       </div>
 
       <div class="tabs">
@@ -348,6 +365,7 @@
         <button class="tab" data-filter="man-ngot">Bánh mặn - ngọt</button>
         <button class="tab" data-filter="custom">Theo yêu cầu</button>
         <button class="tab" data-filter="theo-mua">Theo mùa</button>
+        <button class="tab" data-filter="qua-tang">Set quà tặng</button>
       </div>
 
       <div class="product-grid" id="productGrid">
@@ -369,6 +387,7 @@
 
         <div class="product-card" data-cat="man-ngot">
           <div class="product-media">
+            <span class="product-flag">Đặc trưng</span>
             <img src="images/banh-chuoi.jpg" alt="Bánh chuối choco Cat Cakery">
           </div>
           <div class="product-body">
@@ -383,7 +402,6 @@
 
         <div class="product-card" data-cat="man-ngot">
           <div class="product-media">
-            <span class="product-flag">Đặc trưng</span>
             <img src="images/banh-trungmuoi.jpg" alt="Bánh bông lan trứng muối Cat Cakery">
           </div>
           <div class="product-body">
@@ -440,6 +458,21 @@
           </div>
         </div>
 
+        <div class="product-card" data-cat="qua-tang">
+          <div class="product-media">
+            <span class="product-flag">Set quà tặng</span>
+            <img src="images/banh-hopqua.jpg" alt="Hộp quà bánh kẹo Cat Cakery">
+          </div>
+          <div class="product-body">
+            <h3>Hộp quà bánh, kẹo</h3>
+            <p>Set quà tặng dịp lễ, Tết — bánh và kẹo nhà làm đóng hộp sẵn, thành phần set thay đổi theo thời điểm.</p>
+            <div class="product-foot">
+              <div class="price">Liên hệ giá<small>set theo thời điểm</small></div>
+              <a href="#lien-he" class="add-btn" aria-label="Đặt hộp quà bánh kẹo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5v14"/></svg></a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -460,66 +493,81 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="lien-he">
-    <div class="wrap contact-grid">
-      <div class="contact-info">
-        <h2>Đặt bánh & liên hệ</h2>
-        <p>Nhắn tin qua Facebook, Instagram hoặc gọi trực tiếp — Cat Cakery sẽ phản hồi để chốt vị bánh, ngày nhận và số lượng cùng bạn.</p>
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Cảm nhận khách hàng</span>
+        <h2>Khách hàng nói gì về Cat Cakery</h2>
+        <p>Mỗi lời khen là động lực để Cat Cakery mang đến những chiếc bánh và trải nghiệm tốt hơn mỗi ngày.</p>
+      </div>
+      <div class="stars">
+        <svg viewBox="0 0 24 24" fill="#C8763A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#C8763A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#C8763A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#C8763A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#C8763A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
 
-        <div class="info-row">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#C8763A" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div><div class="label">Điện thoại</div><div class="value">0949 009 197</div></div>
+      <div class="quote-grid">
+        <div class="quote-card">
+          <div class="mark">"</div>
+          <p>Bánh mềm, thơm mùi bơ, vị socola vừa miệng. Bánh dứa mứt bên trong chua nhẹ, ăn hợp lắm luôn.</p>
+          <div class="who"><span class="dot"></span>Khách đặt bánh mochi & bánh dứa</div>
         </div>
-
-        <div class="info-row">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#C8763A" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
-          <div><div class="label">Facebook</div><div class="value">Cat Cakery</div></div>
+        <div class="quote-card">
+          <div class="mark">"</div>
+          <p>Vỏ bánh thơm xịu, mình rất ít ăn bánh dứa nhưng bánh bạn làm vẫn thấy ngon.</p>
+          <div class="who"><span class="dot"></span>Khách đặt bánh dứa mini</div>
         </div>
-
-        <div class="info-row">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#C8763A" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
-          <div><div class="label">Instagram</div><div class="value">_cat.cakery</div></div>
+        <div class="quote-card">
+          <div class="mark">"</div>
+          <p>Đặt bánh xong nhắn phát là được xác nhận liền, đóng gói cẩn thận, đúng hẹn giao.</p>
+          <div class="who"><span class="dot"></span>Khách đặt online qua Zalo</div>
         </div>
-
-        <div class="social-row">
-          <a href="https://www.facebook.com/share/1E2T4xyQYH/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          </a>
+        <div class="quote-card">
+          <div class="mark">"</div>
+          <p>Bánh ngon, ít ngọt đúng như mô tả — chắc chắn sẽ ủng hộ tiếp những lần sau.</p>
+          <div class="who"><span class="dot"></span>Khách quen của Cat Cakery</div>
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent='Đã gửi! Cat Cakery sẽ nhắn lại sớm 🐾'; this.querySelector('.form-submit').disabled=true;">
-        <h3>Gửi yêu cầu đặt bánh</h3>
-        <p class="note">Điền thông tin, Cat Cakery sẽ liên hệ lại qua số điện thoại hoặc Facebook để xác nhận.</p>
-        <div class="field">
-          <label for="name">Họ tên</label>
-          <input id="name" type="text" placeholder="Tên của bạn" required>
-        </div>
-        <div class="field">
-          <label for="phone">Số điện thoại</label>
-          <input id="phone" type="tel" placeholder="09xx xxx xxx" required>
-        </div>
-        <div class="field">
-          <label for="cake">Loại bánh muốn đặt</label>
-          <select id="cake">
-            <option>Bánh dứa</option>
-            <option>Bánh chuối choco</option>
-            <option>Bánh bông lan trứng muối</option>
-            <option>Bánh kem theo yêu cầu</option>
-            <option>Bánh Canelés</option>
-            <option>Bánh trung thu</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="note">Ghi chú</label>
-          <textarea id="note" placeholder="Số lượng, ngày nhận, ghi chú thêm..."></textarea>
-        </div>
-        <button class="btn btn-primary form-submit">Gửi yêu cầu</button>
-      </form>
+      <p class="testi-thanks">Cảm ơn các bạn đã tin tưởng và ủng hộ Cat Cakery 🧡</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="lien-he">
+    <div class="wrap contact-inner">
+      <h2>Đặt bánh & liên hệ</h2>
+      <p>Nhắn tin qua Facebook, Instagram, Zalo hoặc gọi trực tiếp — Cat Cakery sẽ phản hồi để chốt vị bánh, ngày nhận và số lượng cùng bạn.</p>
+
+      <div class="info-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#C8763A" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="label">Điện thoại / Zalo</div><div class="value">0949 009 197</div></div>
+      </div>
+
+      <div class="info-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#C8763A" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+        <div><div class="label">Facebook</div><div class="value">Cat Cakery</div></div>
+      </div>
+
+      <div class="info-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#C8763A" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+        <div><div class="label">Instagram</div><div class="value">_cat.cakery</div></div>
+      </div>
+
+      <div class="social-row">
+        <a href="https://www.facebook.com/share/1DMzbwJ5s9/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/_cat.cakery" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="https://zalo.me/0949009197" target="_blank" rel="noopener" aria-label="Zalo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.83 1.45 5.35 3.73 7.02L5 22l4.3-2.3c.86.2 1.76.3 2.7.3 5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+        </a>
+      </div>
     </div>
   </section>
 </main>
@@ -530,10 +578,21 @@
   <div class="copy">© 2026 Cat Cakery · 0949 009 197 · Facebook: Cat Cakery · Instagram: _cat.cakery</div>
 </footer>
 
-<a href="#lien-he" class="float-order">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
-  <span>Đặt bánh ngay</span>
-</a>
+<div class="float-stack">
+  <a class="float-icon fb" href="https://www.facebook.com/share/1DMzbwJ5s9/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook Fanpage">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+  </a>
+  <a class="float-icon ig" href="https://www.instagram.com/_cat.cakery" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+  </a>
+  <a class="float-icon zalo" href="https://zalo.me/0949009197" target="_blank" rel="noopener" aria-label="Zalo">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.83 1.45 5.35 3.73 7.02L5 22l4.3-2.3c.86.2 1.76.3 2.7.3 5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+  </a>
+  <a href="#lien-he" class="float-order">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+    <span>Đặt bánh ngay</span>
+  </a>
+</div>
 
 <script>
   const tabs = document.querySelectorAll('.tab');
